@@ -230,7 +230,7 @@ window.addEventListener('scroll', () => {
         const section = document.getElementById('animazionePercentuale')
         const sectionTop = section.getBoundingClientRect().top
 
-        if (sectionTop <= window.innerHeight / 2 && !isAnimationRunningPercentuale) {
+        if (sectionTop <= window.innerHeight / 1.2 && !isAnimationRunningPercentuale) {
             carica_percentuali()
 
             isAnimationRunningPercentuale = true
@@ -252,8 +252,8 @@ window.addEventListener('scroll', () => {
 
             isAnimationRunning = true
         }
-    } catch(err){}
 
+    } catch(err){}
 })
 
 window.addEventListener('load', () => {
