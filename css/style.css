@@ -387,6 +387,10 @@ a, a:hover{
 
 
 /* Inzio body progetti */
+.testo-desc-proj{
+    text-align: justify;
+}
+
 .container-progetti{
     color: white;
 }
@@ -411,6 +415,10 @@ a, a:hover{
 
 
 /* Inizio body about */
+.mia-descrizione{
+    text-align: justify;
+}
+
 .contenitore-about{
     color: white;
 }

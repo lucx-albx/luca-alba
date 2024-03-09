@@ -127,7 +127,7 @@ class card_progetti{
         return (
                 `<div class="col-xl-3 col-lg-3 col-md-5 col-10 card-progetti" data-aos="fade-right" data-aos-offset="10" data-aos-easing="ease-in-sine">
                         <h2 class="text-center testo-progetti-tit">${nome}</h2>
-                        <p>
+                        <p class="testo-desc-proj">
                             ${desc}
                         </p>
                         <a href="${link}" target="_blank" class="more mt-2 d-flex justify-content-start align-items-center">Esplora <svg class="centra-freccia" height="20" width="25" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" stroke-linejoin="round" stroke-linecap="round"></path></svg></a>
@@ -139,7 +139,7 @@ class card_progetti{
         return (
             `<div class="col-xl-3 col-lg-3 col-md-5 col-10 card-progetti" data-aos="fade-right" data-aos-offset="10" data-aos-easing="ease-in-sine">
                     <h2 class="text-center testo-progetti-tit">${nome}</h2>
-                    <p>
+                    <p class="testo-desc-proj">
                         ${desc}
                     </p>
                     <a href="${link}" class="more mt-2 d-flex justify-content-start align-items-center" download>Scarica <svg class="centra-freccia" height="20" width="25" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" stroke-linejoin="round" stroke-linecap="round"></path></svg></a>
