@@ -66,7 +66,7 @@ const evidenzia =(el)=>{
 
 const apri_menu =()=>{
     let controlla = document.querySelector(".tipi-sezioni")
-    let altezza = -120
+    let altezza = -130
 
     controlla.style.top = altezza + 'px'
 
@@ -78,10 +78,12 @@ const apri_menu =()=>{
         controlla.classList.add("not-visible")
 
     function frame(){
-        if (altezza === 68) {
+        if (altezza >= 68) {
+            console.log(altezza)
+            
             clearInterval(id)
         } else {
-            altezza += 2
+            altezza += 6
             controlla.style.top = altezza + 'px'
         }
     

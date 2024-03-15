@@ -24,7 +24,7 @@ a, a:hover{
 }
 
 .mt-6{
-    margin-top: 75px;
+    margin-top: 55px;
 }
 
 .centra-freccia{
@@ -89,11 +89,15 @@ a, a:hover{
 }
 
 .tipi-sezioni{
+    --round-border-sez: 0.75rem;
+
     height: 185px;
     position: fixed;
     width: 100%;
     background-color: #282834;
     z-index: 99;
+    border-bottom: 0.5px solid #484f55;
+    /* border-radius: 0px 0px var(--round-border-sez) var(--round-border-sez); */
 }
 
 
