@@ -28,7 +28,7 @@ a, a:hover{
 }
 
 .centra-freccia{
-    margin-top: 0.28rem;
+    margin-top: 0.20rem;
     cursor: pointer;
 }
 
@@ -393,6 +393,11 @@ a, a:hover{
 /* Inzio body progetti */
 .testo-desc-proj{
     text-align: justify;
+    flex: 1;
+}
+
+.bottom-card-proj{
+    margin-top: auto;
 }
 
 .container-progetti{
@@ -400,9 +405,13 @@ a, a:hover{
 }
 
 .card-progetti{
+    display: flex;
+    flex-direction: column;
+
     background-color: #363543;
     padding: 20px;
     margin-top: 40px;
+
     transition: 0.5s;
 }
 
@@ -455,47 +464,47 @@ a, a:hover{
     background-color: #4668a2;
     height: 7px;
     margin-top: -7px;
-    transition: width 3s ease;
+    transition: width 2s ease;
 }
 
 .completamento1.animate {
-    animation: fillHtml 3s ease forwards;
+    animation: fillHtml 2s ease forwards;
 }
 
 .completamento2.animate {
-    animation: fillCss 3s ease forwards;
+    animation: fillCss 2s ease forwards;
 }
 
 .completamento3.animate {
-    animation: fillJs 3s ease forwards;
+    animation: fillJs 2s ease forwards;
 }
 
 .completamento4.animate {
-    animation: fillReact 3s ease forwards;
+    animation: fillReact 2s ease forwards;
 }
 
 .completamento5.animate {
-    animation: fillPython 3s ease forwards;
+    animation: fillPython 2s ease forwards;
 }
 
 .completamento6.animate {
-    animation: fillC 3s ease forwards;
+    animation: fillC 2s ease forwards;
 }
 
 .completamento7.animate {
-    animation: fillBash 3s ease forwards;
+    animation: fillBash 2s ease forwards;
 }
 
 .completamento8.animate {
-    animation: fillSql 3s ease forwards;
+    animation: fillSql 2s ease forwards;
 }
 
 .completamento9.animate {
-    animation: fillFirebase 3s ease forwards;
+    animation: fillFirebase 2s ease forwards;
 }
 
 .completamento10.animate {
-    animation: fillPhp 3s ease forwards;
+    animation: fillPhp 2s ease forwards;
 }
 
 @keyframes fillHtml {
