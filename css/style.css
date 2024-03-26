@@ -393,6 +393,7 @@ a, a:hover{
 /* Inzio body progetti */
 .testo-desc-proj{
     text-align: justify;
+    font-size: 17px;
     flex: 1;
 }
 
