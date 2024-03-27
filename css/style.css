@@ -291,16 +291,20 @@ a, a:hover{
 .blocchi-skill{
     background-color: #353547;
     padding: 15px 25px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.blocchi-skill:hover{
+    cursor: pointer;
 }
 
 .container-blocchi{
     gap: 40px 80px;
 }
 
-@media only screen and (max-width: 1256px) {
+@media only screen and (max-width: 1131px) {
     .solo-loghi{
         display: none!important;
     }
@@ -423,10 +427,6 @@ a, a:hover{
 .testo-progetti-tit{
     color: #99a1aa;
     margin-bottom: 15px;
-}
-
-.blocchi-sel:hover{
-    cursor: pointer;
 }
 /* Fine body progetti */
 

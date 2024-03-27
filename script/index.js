@@ -174,7 +174,7 @@ const carica_progetti =(blocco_selezionato)=>{
         document.querySelector("." + elem).style.border = "none"
     })
 
-    blocco.style.border = "2.5px dashed #e2af27"
+    blocco.style.border = "2.5px solid #e2af27"
     imposta_undefined_progetto_da_caricare()
 
     fetch(API_PROGETTI)
@@ -285,6 +285,5 @@ window.addEventListener('load', () => {
         mirror: false
     })
 
-    if(sezione === "Progetti")
-        carica_progetti('wa')
+    carica_progetti('wa')
 })
