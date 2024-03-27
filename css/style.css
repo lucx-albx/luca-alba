@@ -424,6 +424,10 @@ a, a:hover{
     color: #99a1aa;
     margin-bottom: 15px;
 }
+
+.blocchi-sel:hover{
+    cursor: pointer;
+}
 /* Fine body progetti */
 
 

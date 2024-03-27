@@ -116,20 +116,20 @@
         <div class="row justify-content-center" data-aos="fade-up">
             <div class="col-11 blocco-skill-principali">
                 <div class="row justify-content-center container-blocchi">
-                    <div class="col-2 d-flex justify-content-center align-items-center blocchi-skill">
+                    <!-- <div class="col-2 d-flex justify-content-center align-items-center blocchi-skill">
                         <img src="./img/Frontend_Logo.png" height="30" width="30" alt="html logo"><strong class="solo-loghi">&nbsp FRONTEND</strong>
+                    </div> -->
+
+                    <div class="col-3 d-flex justify-content-center align-items-center blocchi-skill sw blocchi-sel" onclick="carica_progetti('sw')">
+                        <img src="./img/html_logo.png" height="30" width="30" alt="html logo"><strong class="solo-loghi">&nbsp SITI WEB</strong>
                     </div>
 
-                    <div class="col-2 d-flex justify-content-center align-items-center blocchi-skill">
-                        <img src="./img/Backend_Logo.png" height="30" width="30" alt="html logo"><strong class="solo-loghi">&nbsp BACKEND</strong>
+                    <div class="col-3 d-flex justify-content-center align-items-center blocchi-skill wa blocchi-sel" onclick="carica_progetti('wa')">
+                        <img src="./img/react_logo.png" height="30" width="35" alt="react logo"><strong class="solo-loghi">&nbsp WEP APP</strong>
                     </div>
 
-                    <div class="col-2 d-flex justify-content-center align-items-center blocchi-skill">
-                        <img src="./img/Bootstrap_Logo.png" height="30" width="30" alt="html logo"><strong class="solo-loghi">&nbsp BOOTSTRAP</strong>
-                    </div>
-
-                    <div class="col-2 d-flex justify-content-center align-items-center blocchi-skill">
-                        <img src="./img/react_logo.png" height="30" width="35" alt="html logo"><strong class="solo-loghi">&nbsp APP</strong>
+                    <div class="col-3 d-flex justify-content-center align-items-center blocchi-skill ap blocchi-sel" onclick="carica_progetti('ap')">
+                        <img src="./img/python_logo.png" height="30" width="30" alt="python logo"><strong class="solo-loghi">&nbsp APP PYTHON</strong>
                     </div>
                 </div>
             </div>
@@ -140,35 +140,7 @@
 
         <!-- Inizio body sito -->
         <div class="row mt-6 d-flex justify-content-center container-progetti">
-            <div class="col-12 d-flex justify-content-center">
-                <div data-aos-offset="100" data-aos="flip-left">
-                    <h2 class="title-name text-center" id="progetti_webapp">Web app</h2> 
-                    <div class="yellow-line"></div>
-                </div>
-            </div>
-
-
-            <div class="row justify-content-center contenitore-progetti-dev proj-webapp"></div>
-
-            <div class="col-12 d-flex justify-content-center mt-4">
-                <div data-aos-offset="100" data-aos="flip-left">
-                    <h2 class="title-name text-center" id="progetti_sitiweb">Siti web</h2> 
-                    <div class="yellow-line"></div>
-                </div>
-            </div>
-
-            <div class="row justify-content-center contenitore-progetti-dev proj-siti"></div>
-
-
-            <div class="col-12 d-flex justify-content-center mt-4">
-                <div data-aos-offset="100" data-aos="flip-left">
-                    <h2 class="title-name text-center" id="progetti_python">App python</h2> 
-                    <div class="yellow-line"></div>
-                </div>
-            </div>
-
-            <div class="row justify-content-center contenitore-progetti-dev proj-python"></div>
-
+            <div class="row justify-content-center contenitore-progetti-dev all-proj"></div>
         </div>
         <!-- Fine body sito -->
 

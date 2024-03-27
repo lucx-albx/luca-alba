@@ -37,9 +37,13 @@ const carica_impostazioni =()=>{
 
 }
 
-const evidenzia =(el)=>{
+const evidenzia =(el, progetto_selezionato = null)=>{
     el.style.fontWeight = "700"
     el.style.color = "white"
+
+    if(progetto_selezionato !== null){
+        sessionStorage.setItem("ProgettoDaCaricare", progetto_selezionato)
+    }
 
     if (el.textContent.trim() !== Thome.textContent.trim()){
         sessionStorage.setItem("Sezione", el.textContent.trim())
@@ -79,8 +83,6 @@ const apri_menu =()=>{
 
     function frame(){
         if (altezza >= 68) {
-            console.log(altezza)
-            
             clearInterval(id)
         } else {
             altezza += 6
@@ -127,7 +129,7 @@ class card_progetti{
 
     crea(nome, desc, link){
         return (
-                `<div class="col-xl-3 col-lg-3 col-md-5 col-10 card-progetti" data-aos="fade-right" data-aos-offset="10" data-aos-easing="ease-in-sine">
+                `<div class="col-xl-3 col-lg-3 col-md-5 col-10 card-progetti" data-aos="zoom-in" data-aos-offset="10" data-aos-easing="ease-in-sine">
                         <h2 class="text-center testo-progetti-tit">${nome}</h2>
                         <p class="testo-desc-proj mt-2">
                             ${desc}
@@ -142,7 +144,7 @@ class card_progetti{
 
     crea_python(nome, desc, link){
         return (
-            `<div class="col-xl-3 col-lg-3 col-md-5 col-10 card-progetti" data-aos="fade-right" data-aos-offset="10" data-aos-easing="ease-in-sine">
+            `<div class="col-xl-3 col-lg-3 col-md-5 col-10 card-progetti" data-aos="zoom-in" data-aos-offset="10" data-aos-easing="ease-in-sine">
                     <h2 class="text-center testo-progetti-tit">${nome}</h2>
                     <p class="testo-desc-proj mt-2">
                         ${desc}
@@ -154,42 +156,57 @@ class card_progetti{
 
 }
 
-const carica_progetti =()=>{
-    
-    let main_webapp = document.querySelector(".proj-webapp")
-    let main_siti = document.querySelector(".proj-siti")
-    let main_python = document.querySelector(".proj-python")
+const imposta_undefined_progetto_da_caricare =()=>{
+    if(sessionStorage.ProgettoDaCaricare !== undefined || sessionStorage.ProgettoDaCaricare === 'undefined')
+        sessionStorage.setItem('ProgettoDaCaricare', undefined)
+}
+
+const carica_progetti =(blocco_selezionato)=>{
+    blocco_selezionato = sessionStorage.ProgettoDaCaricare === undefined || sessionStorage.ProgettoDaCaricare === 'undefined' ? blocco_selezionato : sessionStorage.ProgettoDaCaricare
+
+    let main_proj = document.querySelector(".all-proj")
+    let blocco = document.querySelector("." + blocco_selezionato)
+    let lista_blocchi_progetti = ['wa', 'sw', 'ap']
     let insert = ""
+
+    //Aggiungo stile al blocco selezionato
+    lista_blocchi_progetti.map((elem)=>{
+        document.querySelector("." + elem).style.border = "none"
+    })
+
+    blocco.style.border = "2.5px dashed #e2af27"
+    imposta_undefined_progetto_da_caricare()
 
     fetch(API_PROGETTI)
     .then(testo=>testo.json())
     .then((data)=>{
         try {
-            //carico info webapp
-            data.Web_app.map((elem, i)=>{
-                insert += new card_progetti().crea(elem.nome, elem.descrizione, elem.link)
-            })
+            if(blocco_selezionato === "wa"){
+                //carico info webapp
+                data.Web_app.map((elem, i)=>{
+                    insert += new card_progetti().crea(elem.nome, elem.descrizione, elem.link)
+                })
 
-            main_webapp.innerHTML = insert
+                main_proj.innerHTML = insert
+            } else if(blocco_selezionato === "sw"){
+                //carico info siti web
+                insert = ""
 
-            //carico info siti web
-            insert = ""
+                data.Siti_web.map((elem, i)=>{
+                    insert += new card_progetti().crea(elem.nome, elem.descrizione, elem.link)
+                })
 
-            data.Siti_web.map((elem, i)=>{
-                insert += new card_progetti().crea(elem.nome, elem.descrizione, elem.link)
-            })
+                main_proj.innerHTML = insert
+            } else if(blocco_selezionato === "ap"){
+                //carico info python
+                insert = ""
 
-            main_siti.innerHTML = insert
+                data.Python_progetti.map((elem, i)=>{
+                    insert += new card_progetti().crea_python(elem.nome, elem.descrizione, elem.link, "100")
+                })
 
-            //carico info python
-            insert = ""
-
-            data.Python_progetti.map((elem, i)=>{
-                insert += new card_progetti().crea_python(elem.nome, elem.descrizione, elem.link, "100")
-            })
-
-            main_python.innerHTML = insert
-
+                main_proj.innerHTML = insert
+            }
         } catch(err){}
     })
     
@@ -262,11 +279,12 @@ window.addEventListener('scroll', () => {
 
 window.addEventListener('load', () => {
     AOS.init({
-        duration: 750,
+        duration: 850,
         easing: "ease-in-out",
         once: true,
         mirror: false
     })
-})
 
-carica_progetti()
+    if(sezione === "Progetti")
+        carica_progetti('wa')
+})
