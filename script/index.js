@@ -126,7 +126,6 @@ const anima_numero_progetti =(finalNumber, numero)=> {
 }
 
 class card_progetti{
-
     crea(nome, desc, link){
         return (
                 `<div class="col-xl-3 col-lg-3 col-md-5 col-10 card-progetti" data-aos="zoom-in" data-aos-offset="10" data-aos-easing="ease-in-sine">
@@ -153,7 +152,6 @@ class card_progetti{
             </div>`
         )
     }
-
 }
 
 const imposta_undefined_progetto_da_caricare =()=>{
