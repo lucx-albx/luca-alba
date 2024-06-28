@@ -71,7 +71,7 @@ a, a:hover{
     color: white;
 }
 
-.home-text, .about-text, .progetti-text{
+.contatti-text, .about-text, .progetti-text{
     font-size: large;
     font-weight: 400
 }
@@ -132,6 +132,11 @@ a, a:hover{
     }
 }
 
+.about-text:hover, .progetti-text:hover, .contatti-text:hover{
+    transition: 0.3s;
+    font-weight: 700;
+    color: white;
+}
 
 .menu-open-button {
     width: 80px;
@@ -211,10 +216,6 @@ a, a:hover{
     color: white;
     padding: 100px 0px 60px 0px;
 }
-
-/* .title-name{
-    font-size: 50px;
-} */
 
 .sotto-titolo{
     color: #99a1aa;
@@ -335,6 +336,7 @@ a, a:hover{
 
 .title-name{
     font-size: 30px;
+    color: white;
 }
 
 .sposta-sinistra{

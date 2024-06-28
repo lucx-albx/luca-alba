@@ -1,72 +1,9 @@
-const Thome = document.querySelector(".home-text")
-const Tprogetti = document.querySelector(".progetti-text")
-const Tabout = document.querySelector(".about-text")
 const duration = 1500
 const interval = 10
 const API_PROGETTI = "https://raw.githubusercontent.com/lucx-albx/Progetti/main/Progetti.json"
 
-let sezione = sessionStorage.Sezione === undefined ? "Home" : sessionStorage.Sezione
 let isAnimationRunning = false
 let isAnimationRunningPercentuale = false
-
-const carica_impostazioni =()=>{
-
-    if (sezione !== Thome.textContent.trim()){
-        Thome.style.color = "#99a1aa"
-        Thome.style.fontWeight = "400"
-    } else {
-        Thome.style.color = "white"
-        Thome.style.fontWeight = "700"
-    }
-        
-    if(sezione !== Tprogetti.textContent.trim()){
-        Tprogetti.style.color = "#99a1aa"
-        Tprogetti.style.fontWeight = "400"
-    } else {
-        Tprogetti.style.color = "white"
-        Tprogetti.style.fontWeight = "700"
-    }
-
-    if(sezione !== Tabout.textContent.trim()){
-        Tabout.style.color = "#99a1aa"
-        Tabout.style.fontWeight = "400"
-    } else {
-        Tabout.style.color = "white"
-        Tabout.style.fontWeight = "700"
-    }
-
-}
-
-const evidenzia =(el, progetto_selezionato = null)=>{
-    el.style.fontWeight = "700"
-    el.style.color = "white"
-
-    if(progetto_selezionato !== null){
-        sessionStorage.setItem("ProgettoDaCaricare", progetto_selezionato)
-    }
-
-    if (el.textContent.trim() !== Thome.textContent.trim()){
-        sessionStorage.setItem("Sezione", el.textContent.trim())
-
-        Thome.style.color = "#99a1aa"
-        Thome.style.fontWeight = "400"
-    }
-        
-    if(el.textContent.trim() !== Tprogetti.textContent.trim()){
-        sessionStorage.setItem("Sezione", el.textContent.trim())
-
-        Tprogetti.style.color = "#99a1aa"
-        Tprogetti.style.fontWeight = "400"
-    }
-
-    if(el.textContent.trim() !== Tabout.textContent.trim()){
-        sessionStorage.setItem("Sezione", el.textContent.trim())
-
-        Tabout.style.color = "#99a1aa"
-        Tabout.style.fontWeight = "400"
-    }
-    
-}
 
 const apri_menu =()=>{
     let controlla = document.querySelector(".tipi-sezioni")
@@ -128,7 +65,7 @@ const anima_numero_progetti =(finalNumber, numero)=> {
 class card_progetti{
     crea(nome, desc, link){
         return (
-                `<div class="col-xl-3 col-lg-3 col-md-5 col-10 card-progetti" data-aos="zoom-in" data-aos-offset="10" data-aos-easing="ease-in-sine">
+                `<div class="col-xl-5 col-lg-5 col-md-5 col-10 card-progetti" data-aos="zoom-in" data-aos-offset="10" data-aos-easing="ease-in-sine">
                         <h2 class="text-center testo-progetti-tit">${nome}</h2>
                         <p class="testo-desc-proj mt-2">
                             ${desc}
@@ -143,7 +80,7 @@ class card_progetti{
 
     crea_python(nome, desc, link){
         return (
-            `<div class="col-xl-3 col-lg-3 col-md-5 col-10 card-progetti" data-aos="zoom-in" data-aos-offset="10" data-aos-easing="ease-in-sine">
+            `<div class="col-xl-5 col-lg-5 col-md-5 col-10 card-progetti" data-aos="zoom-in" data-aos-offset="10" data-aos-easing="ease-in-sine">
                     <h2 class="text-center testo-progetti-tit">${nome}</h2>
                     <p class="testo-desc-proj mt-2">
                         ${desc}
@@ -154,13 +91,8 @@ class card_progetti{
     }
 }
 
-const imposta_undefined_progetto_da_caricare =()=>{
-    if(sessionStorage.ProgettoDaCaricare !== undefined || sessionStorage.ProgettoDaCaricare === 'undefined')
-        sessionStorage.setItem('ProgettoDaCaricare', undefined)
-}
-
-const carica_progetti =(blocco_selezionato)=>{
-    blocco_selezionato = sessionStorage.ProgettoDaCaricare === undefined || sessionStorage.ProgettoDaCaricare === 'undefined' ? blocco_selezionato : sessionStorage.ProgettoDaCaricare
+const carica_progetti =(blocco_selezionato = "")=>{
+    blocco_selezionato = blocco_selezionato !== "" ? blocco_selezionato : "sw"
 
     let main_proj = document.querySelector(".all-proj")
     let blocco = document.querySelector("." + blocco_selezionato)
@@ -173,7 +105,6 @@ const carica_progetti =(blocco_selezionato)=>{
     })
 
     blocco.style.border = "2.5px solid #e2af27"
-    imposta_undefined_progetto_da_caricare()
 
     fetch(API_PROGETTI)
     .then(testo=>testo.json())
