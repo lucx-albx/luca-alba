@@ -449,7 +449,7 @@ a, a:hover{
     margin-right: 6px;
 }
 
-@media only screen and (min-width: 410px) and (max-width: 575px){
+@media only screen and (min-width: 409px) and (max-width: 575px){
     .col-mia-4{
         -webkit-box-flex: 0;
         -ms-flex: 0 0 33.333333%;
