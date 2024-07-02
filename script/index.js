@@ -95,10 +95,10 @@ class card_progetti{
             `<div class="col-xl-5 col-lg-5 col-md-5 col-10 card-progetti" data-aos="zoom-in" data-aos-offset="10" data-aos-easing="ease-in-sine">
                     <h2 class="text-center testo-progetti-tit">${nome}</h2>
 
-                    <div class="row justify-content-start align-items-center">
+                    <div class="row contenitore-tecno justify-content-start align-items-center">
                         ${
                             tecno.map((elem) => 
-                                `<div class="col-xl-2 col-lg-2 col-md-6 col-sm-4 col-6 nome-tecno d-flex justify-content-start align-items-center">
+                                `<div class="col-xl-3 col-lg-4 col-md-4 col-sm-3 col-mia-4 col-6 nome-tecno d-flex justify-content-start align-items-center">
                                     <div class="pallino-tecnologia" style="background-color: ${elem.colore}"></div>
                                     ${elem.nome}
                                 </div>`
