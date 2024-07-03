@@ -41,7 +41,7 @@ class campo_scacchi(tk.Tk):
 		self.mosse_quuen_rd = []
 		self.mosse_quuen_rs = []
 		
-		self.geometry("705x713")
+		self.geometry("560x713")
 		self.resizable(0, 0)
 		self.title("Alba - Scacchi")
 		self.crea_widgets()
