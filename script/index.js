@@ -27,7 +27,6 @@ const apri_menu =()=>{
         }
     
     }
-    
 }
 
 const checkScreenWidth =()=> {
@@ -44,7 +43,6 @@ const checkScreenWidth =()=> {
         servizi.classList.remove("posiziona-verticale-centrale")
         descrizione.classList.remove("posiziona-verticale-centrale")
     }
-
 }
 
 const anima_numero_progetti =(finalNumber, numero)=> {
@@ -137,7 +135,6 @@ const carica_progetti =(blocco_selezionato = "")=>{
         try {
             if(blocco_selezionato === "wa"){
                 //carico info webapp
-                console.log(data.Web_app)
                 data.Web_app.map((elem, i)=>{
                     insert += new card_progetti().crea(elem.nome, elem.descrizione, elem.link, elem.tecnologie)
                 })
@@ -164,7 +161,6 @@ const carica_progetti =(blocco_selezionato = "")=>{
             }
         } catch(err){}
     })
-    
 }
 
 const carica_percentuali =()=>{
@@ -206,13 +202,14 @@ window.addEventListener('scroll', () => {
         const section = document.getElementById('animazionePercentuale')
         const sectionTop = section.getBoundingClientRect().top
 
-        if (sectionTop <= window.innerHeight / 1.2 && !isAnimationRunningPercentuale) {
+        if (sectionTop <= window.innerHeight / 1.1 && !isAnimationRunningPercentuale) {
             carica_percentuali()
 
             isAnimationRunningPercentuale = true
         }
-    } catch(err){}
-
+    } catch(err){
+        console.log("Animazione fallita (percentuali skill)")
+    }
 })
 
 window.addEventListener('scroll', () => {
@@ -220,8 +217,8 @@ window.addEventListener('scroll', () => {
         const section = document.getElementById('animazioneNumeri')
         const sectionTop = section.getBoundingClientRect().top
 
-        if (sectionTop <= window.innerHeight / 2 && !isAnimationRunning) {
-            anima_numero_progetti(14, document.querySelector(".progetti-pubblicati-numero"))
+        if (sectionTop <= window.innerHeight / 1.4 && !isAnimationRunning) {
+            anima_numero_progetti(15, document.querySelector(".progetti-pubblicati-numero"))
             anima_numero_progetti(32, document.querySelector(".progetti-sviluppati-numero"))
             anima_numero_progetti(7, document.querySelector(".progetti-iconici-numero"))
             anima_numero_progetti(12, document.querySelector(".progetti-webapp-numero"))
@@ -229,7 +226,9 @@ window.addEventListener('scroll', () => {
             isAnimationRunning = true
         }
 
-    } catch(err){}
+    } catch(err){
+        console.log("Animazione fallita (numero progetti)")
+    }
 })
 
 window.addEventListener('load', () => {

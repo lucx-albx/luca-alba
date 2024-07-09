@@ -1,8 +1,10 @@
 /* 
-#363543 
-#2e2c39
-#282834
+Colori principalmente usati:
+-> #363543 
+-> #2e2c39
+-> #282834
 */
+
 
 
 /* Proprietà css generali */
@@ -40,6 +42,10 @@ a, a:hover{
     margin: 0!important;
     padding: 0!important;
     box-sizing: border-box!important;
+}
+
+.taj{
+    text-align: justify;
 }
 /* Proprietà css generali */
 
@@ -325,7 +331,7 @@ a, a:hover{
 
 
 
-/* Inizio corpo sito */
+/* Inizio sezione informazioni generali */
 .container-body-site{
     color: white;
 }
@@ -346,7 +352,7 @@ a, a:hover{
 }
 
 .sposta-sinistra{
-    margin-left: -1.5%;
+    margin-left: -15px;
 }
 
 .centra-freccia-proj{
@@ -368,7 +374,7 @@ a, a:hover{
 
 .sottolinea-progetti{
     border-bottom: 1px solid #99a1aa;
-    padding: 10px;
+    padding-bottom: 10px;
 }
 
 .descrizione-progetto{
@@ -380,94 +386,11 @@ a, a:hover{
         font-size: 12px;
     }
 }
-
-/* Fine corpo sito */
-
-
-
-/* Inizio footer */
-.contenitore-mio-footer{
-    background-color: #363543;
-    padding: 15px;
-    color: white;
-}
-
-.crediti-finali{
-    border-top: 1px solid #403e52;
-    background-color: #363543;
-    padding: 10px;
-    padding-bottom: 58px;
-    color: white;
-    text-align: center;
-}
-/* Fine footer */
+/* Fine sezione informazioni generali */
 
 
 
-/* Inzio body progetti */
-.testo-desc-proj{
-    text-align: justify;
-    font-size: 17px;
-    flex: 1;
-}
-
-.bottom-card-proj{
-    margin-top: auto;
-}
-
-.container-progetti{
-    color: white;
-}
-
-.card-progetti{
-    display: flex;
-    flex-direction: column;
-
-    border: 1px solid #99a1aa;
-    background-color: #363543;
-    padding: 20px;
-    margin-top: 40px;
-
-    transition: 0.5s;
-}
-
-.contenitore-progetti-dev{
-    gap: 0px 35px;
-}
-
-.testo-progetti-tit{
-    color: #99a1aa;
-    margin-bottom: 15px;
-}
-
-.nome-tecno{
-    color: #fff;
-    font-weight: 700;
-    font-size: 15px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
-
-.pallino-tecnologia{
-    border-radius: 100%;
-    height: 6px;
-    width: 6px;
-    margin-right: 6px;
-}
-
-@media only screen and (min-width: 410px) and (max-width: 575px){
-    .col-mia-4{
-        -webkit-box-flex: 0;
-        -ms-flex: 0 0 33.333333%;
-        flex: 0 0 33.333333%;
-        max-width: 33.333333%;
-    }
-}
-/* Fine body progetti */
-
-
-
-/* Inizio body about */
+/* Inizio sezione about */
 .mia-descrizione{
     text-align: justify;
 }
@@ -606,7 +529,70 @@ a, a:hover{
     55% { width: 55%; }
     100% { width: 55%; }
 }
-/* Inizio body about */
+/* Inizio sezione about */
+
+
+
+/* Inzio sezione progetti */
+.testo-desc-proj{
+    text-align: justify;
+    font-size: 17px;
+    flex: 1;
+}
+
+.bottom-card-proj{
+    margin-top: auto;
+}
+
+.container-progetti{
+    color: white;
+}
+
+.card-progetti{
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #99a1aa;
+    background-color: #363543;
+    padding: 20px;
+    margin-top: 40px;
+
+    transition: 0.5s;
+}
+
+.contenitore-progetti-dev{
+    gap: 0px 35px;
+}
+
+.testo-progetti-tit{
+    color: #99a1aa;
+    margin-bottom: 15px;
+}
+
+.nome-tecno{
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.pallino-tecnologia{
+    border-radius: 100%;
+    height: 6px;
+    width: 6px;
+    margin-right: 6px;
+}
+
+@media only screen and (min-width: 410px) and (max-width: 575px){
+    .col-mia-4{
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+/* Fine sezione progetti */
 
 
 
@@ -634,3 +620,21 @@ a, a:hover{
     opacity: 1;
 }
 /* FINE BOTTONE SCROLLA SU */
+
+
+
+/* Inizio footer */
+.contenitore-mio-footer{
+    background-color: #363543;
+    padding: 15px;
+    color: white;
+}
+
+.crediti-finali{
+    border-top: 1px solid #403e52;
+    background-color: #363543;
+    padding: 10px;
+    padding-bottom: 58px;
+    color: white;
+}
+/* Fine footer */
