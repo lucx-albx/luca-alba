@@ -101,18 +101,13 @@ a, a:hover{
 }
 
 .tipi-sezioni{
-    --round-border-sez: 0.75rem;
-
     height: 185px;
     position: fixed;
     width: 100%;
     background-color: #282834;
     z-index: 99;
     border-bottom: 0.5px solid #484f55;
-    /* border-radius: 0px 0px var(--round-border-sez) var(--round-border-sez); */
 }
-
-
 
 @media only screen and (min-width: 768px) {
     .container-more{
@@ -351,10 +346,6 @@ a, a:hover{
     color: white;
 }
 
-.sposta-sinistra{
-    margin-left: -15px;
-}
-
 .centra-freccia-proj{
     margin-top: -4%;
 }
@@ -384,6 +375,13 @@ a, a:hover{
 @media only screen and (max-width: 944px) {
     .titolo-progetti{
         font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .flex-end-425{
+        display: flex;
+        justify-content: end;
     }
 }
 /* Fine sezione informazioni generali */
