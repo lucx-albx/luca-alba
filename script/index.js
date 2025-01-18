@@ -5,9 +5,13 @@ const API_PROGETTI = "https://raw.githubusercontent.com/lucx-albx/Progetti/main/
 let isAnimationRunning = false
 let isAnimationRunningPercentuale = false
 
-const apri_menu =()=>{
+const gestione_menu =(azione)=>{
+    let btn_menu = document.querySelector(".menu-open")
     let controlla = document.querySelector(".tipi-sezioni")
     let altezza = -130
+
+    if (azione == "chiudi")
+        btn_menu.checked = !btn_menu.checked
 
     controlla.style.top = altezza + 'px'
 
@@ -25,7 +29,6 @@ const apri_menu =()=>{
             altezza += 6
             controlla.style.top = altezza + 'px'
         }
-    
     }
 }
 
@@ -213,6 +216,21 @@ window.addEventListener('scroll', () => {
 })
 
 window.addEventListener('scroll', () => {
+    // Aggiungi / Rimuovi freccia per tornare in alto
+    const section_body = document.querySelector(".container-sito")
+    const bodyTop = section_body.getBoundingClientRect().top
+    let topbutton = document.querySelector(".scrollTop")
+
+    if (bodyTop <= -400)
+    {
+        topbutton.classList.remove("hidden")
+    } 
+    else 
+    {
+        topbutton.classList.add("hidden")
+    }
+
+    // Anima numero progetti sviluppati
     try{
         const section = document.getElementById('animazioneNumeri')
         const sectionTop = section.getBoundingClientRect().top

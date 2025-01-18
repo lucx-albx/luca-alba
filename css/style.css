@@ -47,6 +47,10 @@ a, a:hover{
 .taj{
     text-align: justify;
 }
+
+.hidden{
+    display: none!important;
+}
 /* Proprietà css generali */
 
 
