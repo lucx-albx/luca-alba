@@ -64,55 +64,57 @@ const anima_numero_progetti =(finalNumber, numero)=> {
 }
 
 class card_progetti{
-    crea(nome, desc, link, tecno){
+    crea(nome, desc, link, tecno)
+    {
         return (
-                `<div class="col-xl-5 col-lg-5 col-md-5 col-11 card-progetti" data-aos="zoom-in" data-aos-offset="10" data-aos-easing="ease-in-sine">
-                        <h2 class="text-center testo-progetti-tit">${nome}</h2>
+            `
+            <div class="col-xl-5 col-lg-5 col-md-5 col-11 card-progetti" data-aos="zoom-in" data-aos-offset="10" data-aos-easing="ease-in-sine">
+                <div class="tech-tags">
+                    ${
+                        tecno.map((elem) => 
+                            `
+                            <span class="tag ${elem.nome.toLowerCase()}">${elem.nome}</span>
+                            `
+                        )
+                    }
+                </div>
 
-                        <div class="row contenitore-tecno justify-content-start align-items-center">
-                            ${
-                                tecno.map((elem) => 
-                                    `<div class="col-xl-3 col-lg-4 col-md-4 col-sm-3 col-mia-4 col-6 nome-tecno d-flex justify-content-start align-items-center">
-                                        <div class="pallino-tecnologia" style="background-color: ${elem.colore}"></div>
-                                        ${elem.nome}
-                                    </div>`
-                                ).join('')
-                            }
-                        </div>
+                <h1 class="title">${nome}</h1>
 
-                        <p class="testo-desc-proj mt-2">
-                            ${desc}
-                        </p>
-                        
-                        <div class="bottom-card-proj">
-                            <a href="${link}" target="_blank" class="more mt-2 d-flex justify-content-start align-items-center">Esplora <svg class="centra-freccia" height="20" width="25" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" stroke-linejoin="round" stroke-linecap="round"></path></svg></a>
-                        </div>
-                </div>`
-            )
+                <p class="description">
+                    ${desc}
+                </p>
+
+                <a href="${link}" target="_blank" class="cta-button">Esplora →</a>
+            </div>
+            `
+        )
     }
 
-    crea_python(nome, desc, link, tecno){
+    crea_python(nome, desc, link, tecno)
+    {
         return (
-            `<div class="col-xl-5 col-lg-5 col-md-5 col-10 card-progetti" data-aos="zoom-in" data-aos-offset="10" data-aos-easing="ease-in-sine">
-                    <h2 class="text-center testo-progetti-tit">${nome}</h2>
+            `
+            <div class="col-xl-5 col-lg-5 col-md-5 col-11 card-progetti" data-aos="zoom-in" data-aos-offset="10" data-aos-easing="ease-in-sine">
+                <div class="tech-tags">
+                    ${
+                        tecno.map((elem) => 
+                            `
+                            <span class="tag react">${elem.nome}</span>
+                            `
+                        )
+                    }
+                </div>
 
-                    <div class="row contenitore-tecno justify-content-start align-items-center">
-                        ${
-                            tecno.map((elem) => 
-                                `<div class="col-xl-3 col-lg-4 col-md-4 col-sm-3 col-mia-4 col-6 nome-tecno d-flex justify-content-start align-items-center">
-                                    <div class="pallino-tecnologia" style="background-color: ${elem.colore}"></div>
-                                    ${elem.nome}
-                                </div>`
-                            ).join('')
-                        }
-                    </div>
+                <h1 class="title">${nome}</h1>
 
-                    <p class="testo-desc-proj mt-2">
-                        ${desc}
-                    </p>
+                <p class="description">
+                    ${desc}
+                </p>
 
-                    <a href="${link}" class="more d-flex justify-content-start align-items-center" download>Scarica <svg class="centra-freccia" height="20" width="25" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" stroke-linejoin="round" stroke-linecap="round"></path></svg></a>
-            </div>`
+                <a href="${link}" class="cta-button" download>Scarica ↓</a>
+            </div>
+            `
         )
     }
 }
